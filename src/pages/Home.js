@@ -68,6 +68,7 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow: hidden;
   .header {
     width: 100vw;
     height: 100vh;

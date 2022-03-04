@@ -50,7 +50,7 @@ const Navbar = () => {
               duration={1000}
               activeClass="active"
               spy={true}
-              offset={-30}
+              // offset={-30}
             >
               O nas
             </Link>
@@ -205,11 +205,12 @@ const Wrapper = styled.div`
       letter-spacing: 1px;
       margin: 10px 1vw 0;
       text-transform: uppercase;
-      transition: 0.5s;
+      transition: 0.5s letter-spacing;
       cursor: pointer;
       text-shadow: 3px 3px 3px black;
+      padding-bottom: 8px;
       &.active {
-        color: var(--secondaryColor);
+        border-bottom: 2px solid white;
       }
       :hover {
         letter-spacing: 3px;
