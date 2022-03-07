@@ -2,9 +2,12 @@ import "./App.css";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Services from "./pages/Services";
 import Prices from "./pages/Prices";
+import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -13,6 +16,7 @@ function App() {
       <Navbar />
       <Home />
       <About />
+      <Services />
     </div>
   );
 }

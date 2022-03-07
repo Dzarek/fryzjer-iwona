@@ -1,29 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import OpenHours from "../components/OpenHours";
 
 import aboutUsImg from "../images/aboutUs.jpg";
-import scissors from "../images/scissors.svg";
-import grzebien from "../images/grzebien.svg";
-import suszarka from "../images/suszarka.svg";
 
 const About = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
-    <Wrapper className="page">
+    <Wrapper id="aboutMe" className="page">
       <div className="hairFeatures">
         <span>
-          <img src={scissors} alt="" />
           <h2>PASJA</h2>
         </span>
         <span>
-          <img src={grzebien} alt="" />
           <h2>DOŚWIADCZENIE</h2>
         </span>
         <span>
-          <img src={suszarka} alt="" />
-          <h2>ZAJEBISTOŚĆ</h2>
+          <h2>KREATYWNOŚĆ</h2>
         </span>
       </div>
-      <div id="aboutMe" className="aboutContainer">
+      <div className="aboutContainer">
         <h2 className="titlePage">O NAS</h2>
         <div className="pageContent">
           <article>
@@ -35,32 +35,35 @@ const About = () => {
               necessitatibus molestiae, libero animi praesentium iste dolores?
             </p>
           </article>
-          <div className="imgAbout"></div>
+          <div data-aos="fade-left" className="imgAbout"></div>
         </div>
       </div>
+      <OpenHours />
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  padding: 0 1vw;
+  /* padding: 15vh 0vw; */
   margin: 15vh auto;
 
   .aboutContainer {
     padding-top: 20vh;
-    margin: 0 auto 10vh;
+    margin: 0 auto 20vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
   }
   .titlePage {
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 50vh;
+    left: -3vw;
   }
   .pageContent {
     /* width: 70vw; */
     display: flex;
     margin-right: 10vw;
-    margin-top: 5vh;
     article {
       height: 65vh;
       width: 65vh;
@@ -105,19 +108,10 @@ const Wrapper = styled.div`
       justify-content: center;
       align-items: center;
 
-      img {
-        width: 70%;
-        height: 15vh;
-        margin-bottom: 5vh;
-        transition: 0.5s;
-      }
       h2 {
         font-family: var(--menuFont);
-        color: var(--secondaryColor);
+        color: var(--secondaryColor2);
         font-size: 2rem;
-      }
-      :hover img {
-        transform: rotate(10deg);
       }
     }
   }

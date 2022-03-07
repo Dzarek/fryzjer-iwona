@@ -55,14 +55,14 @@ const Navbar = () => {
               O nas
             </Link>
             <Link
-              to="gallery"
+              to="service"
               smooth={true}
               duration={1000}
               activeClass="active"
               spy={true}
               offset={-50}
             >
-              Galeria
+              Usługi
             </Link>
             <Link
               to="offer"
@@ -73,6 +73,16 @@ const Navbar = () => {
               offset={-50}
             >
               Cennik
+            </Link>
+            <Link
+              to="offer"
+              smooth={true}
+              duration={1000}
+              activeClass="active"
+              spy={true}
+              offset={-50}
+            >
+              Galeria
             </Link>
 
             <Link

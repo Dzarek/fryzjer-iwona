@@ -16,6 +16,7 @@ html {
   --primaryBg: #fff;
   --primaryColor: #222;
   --secondaryColor: #d3bb8c;
+  --secondaryColor2: #a18c61;
   --menuFont: "Oswald", sans-serif;
   --textFont: 'Signika Negative', sans-serif;
 }
@@ -26,6 +27,7 @@ body {
   min-height: 200vh;
   background: var(--primaryBg);
   color: var(--primaryColor);
+  font-family: var(--textFont);
 }
 
 .page {
@@ -40,4 +42,5 @@ body {
   font-family: var(--menuFont);
   letter-spacing: 10px;
   z-index: 99;
+  text-transform: uppercase;
 }
