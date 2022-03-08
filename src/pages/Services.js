@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import styled from "styled-components";
@@ -7,7 +7,7 @@ import OneSerivce from "../components/OneSerivce";
 
 const Services = () => {
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 1500 });
   }, []);
 
   return (
@@ -28,7 +28,6 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  /* padding: 0vh 0vw; */
 
   .titlePage {
     transform: rotate(90deg);

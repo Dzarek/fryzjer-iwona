@@ -65,12 +65,12 @@ const Navbar = () => {
               Usługi
             </Link>
             <Link
-              to="offer"
+              to="price"
               smooth={true}
               duration={1000}
               activeClass="active"
               spy={true}
-              offset={-50}
+              offset={-73}
             >
               Cennik
             </Link>

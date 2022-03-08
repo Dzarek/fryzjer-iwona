@@ -17,6 +17,8 @@ function App() {
       <Home />
       <About />
       <Services />
+      <Prices />
+      <Gallery />
     </div>
   );
 }

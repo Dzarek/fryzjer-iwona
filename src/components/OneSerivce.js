@@ -5,7 +5,7 @@ const OneSerivce = ({ icon, title, info }) => {
   const [showInfo, setShowInfo] = useState(false);
 
   return (
-    <article>
+    <article onMouseLeave={() => setShowInfo(false)}>
       <img src={icon} alt={title} />
       <h3>{title}</h3>
       <p>{info.substring(0, 120)}...</p>
