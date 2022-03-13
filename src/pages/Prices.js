@@ -68,13 +68,13 @@ const Wrapper = styled.div`
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
-  margin: 20vh auto;
+  margin: 20vh auto 0;
 
   .titlePage {
     position: absolute;
     top: 50%;
     transform: translateY(-50%) rotate(-90deg);
-    left: -3vw;
+    left: -6vw;
   }
   .priceContainer {
     position: absolute;

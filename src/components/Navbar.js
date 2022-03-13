@@ -74,7 +74,7 @@ const Navbar = () => {
             >
               Cennik
             </Link>
-            <Link
+            {/* <Link
               to="offer"
               smooth={true}
               duration={1000}
@@ -83,7 +83,7 @@ const Navbar = () => {
               offset={-50}
             >
               Galeria
-            </Link>
+            </Link> */}
 
             <Link
               to="contact"
@@ -91,7 +91,6 @@ const Navbar = () => {
               duration={1000}
               activeClass="active"
               spy={true}
-              offset={-20}
             >
               Kontakt
             </Link>

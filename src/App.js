@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Prices from "./pages/Prices";
-import Gallery from "./pages/Gallery";
+import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -18,7 +18,9 @@ function App() {
       <About />
       <Services />
       <Prices />
-      <Gallery />
+      {/* <Reviews /> */}
+      <Contact />
+      <Footer />
     </div>
   );
 }

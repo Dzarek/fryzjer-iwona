@@ -51,7 +51,6 @@ const Home = () => {
         duration={1000}
         activeClass="active"
         spy={true}
-        offset={-20}
         className="bookLink"
       >
         Umów wizytę

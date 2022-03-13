@@ -57,7 +57,7 @@ const Wrapper = styled.div`
   .titlePage {
     transform: rotate(-90deg);
     position: absolute;
-    top: 50vh;
+    top: 40vh;
     left: -3vw;
   }
   .pageContent {
