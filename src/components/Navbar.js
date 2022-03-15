@@ -307,7 +307,7 @@ const Wrapper2 = styled.div`
   h1 {
     width: 100%;
     font-family: "Karantina", cursive;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
     display: flex;
     justify-content: center;
