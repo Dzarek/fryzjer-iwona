@@ -69,12 +69,20 @@ const Wrapper = styled.div`
   background-attachment: fixed;
   min-height: 100vh;
   margin: 20vh auto 0;
-
+  @media screen and (max-width: 800px) {
+    margin: 10vh auto 0;
+    padding: 10vh 0;
+  }
   .titlePage {
     position: absolute;
     top: 50%;
     transform: translateY(-50%) rotate(-90deg);
     left: -6vw;
+    @media screen and (max-width: 800px) {
+      top: 10vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
   .priceContainer {
     position: absolute;
@@ -85,6 +93,12 @@ const Wrapper = styled.div`
     flex-direction: column;
     color: #eee;
     text-shadow: 2px 2px 2px black;
+    @media screen and (max-width: 800px) {
+      margin-left: 0;
+      margin: 20vh auto 0;
+      width: 100vw;
+      position: relative;
+    }
     .categoryList {
       width: 100%;
       display: flex;
@@ -92,6 +106,11 @@ const Wrapper = styled.div`
       align-items: center;
       list-style: none;
       margin-bottom: 5vh;
+      @media screen and (max-width: 800px) {
+        flex-wrap: wrap;
+        margin: 0 auto 5vh;
+        width: 100vw;
+      }
       li {
         font-family: var(--menuFont);
         text-transform: uppercase;
@@ -106,6 +125,11 @@ const Wrapper = styled.div`
         padding-bottom: 4vh;
         :hover {
           color: #fff;
+        }
+        @media screen and (max-width: 800px) {
+          font-size: 1.7rem;
+          width: 50%;
+          padding: 3vh 5%;
         }
       }
       .activeItem {
@@ -123,6 +147,7 @@ const Wrapper = styled.div`
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+
       li {
         width: 45%;
         display: flex;
@@ -131,6 +156,12 @@ const Wrapper = styled.div`
         font-size: 1.6rem;
         margin-top: 4vh;
         color: #fff;
+        @media screen and (max-width: 800px) {
+          width: 90%;
+          margin: 0vh auto;
+          margin-top: 4vh;
+          font-size: 1.2rem;
+        }
         span {
           color: var(--secondaryColor);
         }

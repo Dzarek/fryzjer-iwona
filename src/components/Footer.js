@@ -4,9 +4,13 @@ import styled from "styled-components";
 const Footer = () => {
   return (
     <Wrapper>
-      <p>
-        &copy; {new Date().getFullYear()} Salon Fryzjerski - Iwona Marzec.
-        Wszelkie prawa zastrzeżone.
+      <p className="desktopFooter">
+        &copy; 2010 - {new Date().getFullYear()} Salon Fryzjerski - Iwona
+        Marzec. Wszelkie prawa zastrzeżone.
+      </p>
+      <p className="mobileFooter">
+        &copy; 2010 - {new Date().getFullYear()} <br /> Salon Fryzjerski - Iwona
+        Marzec. Wszelkie prawa zastrzeżone.
       </p>
     </Wrapper>
   );
@@ -22,10 +26,23 @@ const Wrapper = styled.div`
   font-family: var(--titleFont);
   font-size: 1.3rem;
   color: #fff;
+  text-align: center;
+  .mobileFooter {
+    display: none;
+  }
+  .desktopFooter {
+    display: block;
+  }
   @media screen and (max-width: 800px) {
     margin-bottom: 10vh;
-    height: 12vh;
-    text-align: center;
+    height: 15vh;
+    font-size: 1.1rem;
+    .desktopFooter {
+      display: none;
+    }
+    .mobileFooter {
+      display: block;
+    }
   }
 `;
 

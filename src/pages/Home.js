@@ -14,7 +14,7 @@ const Home = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper>
+    <Wrapper id="home">
       <div className="header"></div>
       <div className="header-info">
         <Carousel

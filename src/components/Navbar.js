@@ -5,7 +5,7 @@ import { animateScroll as scroll } from "react-scroll";
 
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
 
-import { GiHairStrands } from "react-icons/gi";
+import { ImScissors } from "react-icons/im";
 import { GiReceiveMoney } from "react-icons/gi";
 import { MdPeople } from "react-icons/md";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
@@ -50,6 +50,7 @@ const Navbar = () => {
               duration={1000}
               activeClass="active"
               spy={true}
+              offset={-90}
             >
               O nas
             </Link>
@@ -145,10 +146,10 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            offset={30}
+            offset={-30}
             onClick={handleScroll}
           >
-            <GiHairStrands />
+            <ImScissors />
           </Link>
           <Link
             to="price"

@@ -34,6 +34,11 @@ const Wrapper = styled.div`
     position: absolute;
     top: 30vh;
     right: -5vw;
+    @media screen and (max-width: 800px) {
+      top: 0vh;
+      right: 50%;
+      transform: translateX(50%);
+    }
   }
   .servicesContainer {
     margin-left: 8vw;
@@ -43,6 +48,14 @@ const Wrapper = styled.div`
     grid-template-rows: 1fr 1fr;
     column-gap: 5vw;
     row-gap: 5vh;
+    @media screen and (max-width: 800px) {
+      margin-left: 0;
+      margin: 15vh auto 0vh;
+      width: 80vw;
+      grid-template-columns: 1fr;
+      row-gap: 5vh;
+      /* grid-template-rows: 1fr 1fr; */
+    }
     article {
       display: flex;
       flex-direction: column;
@@ -51,6 +64,15 @@ const Wrapper = styled.div`
       width: 100%;
       position: relative;
       overflow: hidden;
+      @media screen and (max-width: 800px) {
+        min-height: 40vh;
+        height: auto;
+        border-bottom: 1px solid black;
+        padding-bottom: 5vh;
+        :nth-last-of-type(1) {
+          border-bottom: none;
+        }
+      }
       img {
         width: 40%;
         max-width: 120px;

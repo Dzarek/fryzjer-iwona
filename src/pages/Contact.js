@@ -17,7 +17,7 @@ const Contact = () => {
         <section className="myForm">
           <MyForm />
           <div className="contactFast">
-            <h3>lub zadzwoń</h3>
+            <h3>zadzwoń</h3>
             <section>
               <MdPhoneAndroid />
               <h5>789 194 123</h5>
@@ -50,6 +50,11 @@ const Wrapper = styled.div`
     top: 35%;
     transform: translateY(-50%) rotate(90deg);
     right: -8.5vw;
+    @media screen and (max-width: 800px) {
+      top: 10vh;
+      right: 50%;
+      transform: translateX(50%);
+    }
   }
   h3 {
     display: flex;
@@ -61,6 +66,10 @@ const Wrapper = styled.div`
     letter-spacing: 3px;
     margin-bottom: 10vh;
     margin-top: 5vh;
+    @media screen and (max-width: 800px) {
+      font-size: 2rem;
+      margin-top: 15vh;
+    }
   }
   .contactContainer {
     display: flex;
@@ -82,7 +91,7 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     margin-right: 20vw;
-    width: 60vw;
+    width: 65vw;
     margin-left: 0vw;
     margin-bottom: 10vh;
     h3 {
@@ -94,14 +103,26 @@ const Wrapper = styled.div`
       font-size: 2rem;
       letter-spacing: 2px;
     }
+    @media screen and (max-width: 800px) {
+      width: 90vw;
+      margin-right: 0;
+      margin: 0 auto 10vh;
+      flex-direction: column-reverse;
+    }
   }
   .contactFast {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 800px) {
+      margin: 0 auto 10vh;
+    }
     h3 {
       margin-bottom: 10vh;
+      @media screen and (max-width: 800px) {
+        margin-bottom: 0vh;
+      }
     }
     section {
       display: flex;
@@ -136,6 +157,9 @@ const Wrapper = styled.div`
           100% {
             transform: rotate(0deg);
           }
+        }
+        @media screen and (max-width: 800px) {
+          margin-right: 5vw;
         }
       }
       .icon {

@@ -199,7 +199,7 @@ class MyForm extends Component {
 
 const Wrapper = styled.div`
   form {
-    width: 35vw;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

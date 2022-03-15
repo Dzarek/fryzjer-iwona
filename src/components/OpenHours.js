@@ -37,6 +37,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 5vh 5vw;
+
   .hoursLine {
     height: 80%;
     width: 2px;
@@ -76,6 +77,40 @@ const Wrapper = styled.div`
       }
       p {
         color: var(--secondaryColor);
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    height: auto;
+    .hoursLine {
+      height: 2px;
+      width: 80vw;
+      margin: 5vh auto;
+    }
+    div {
+      width: 90vw;
+    }
+    .hoursLeft {
+      h2 {
+        font-size: 2rem;
+      }
+      svg {
+        font-size: 4rem;
+        margin-top: 3vh;
+      }
+    }
+    .hoursRight {
+      section {
+        width: 100%;
+        padding: 20px 0;
+        font-size: 1.1rem;
+        h3 {
+          font-size: 1.1rem;
+        }
+        p {
+          font-size: 1.1rem;
+        }
       }
     }
   }
