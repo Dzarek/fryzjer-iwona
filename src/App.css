@@ -24,7 +24,7 @@ html {
 body {
   overflow-x: hidden;
   width: 100vw;
-  min-height: 200vh;
+  min-height: 100vh;
   background: var(--primaryBg);
   color: var(--primaryColor);
   font-family: var(--textFont);
@@ -43,4 +43,12 @@ body {
   letter-spacing: 10px;
   z-index: 99;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 800px) {
+  .titlePage {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    z-index: 99;
+  }
 }

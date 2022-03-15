@@ -98,6 +98,30 @@ const Wrapper = styled.div`
         background-image: url(${headerImg2});
       }
     }
+    @media screen and (max-width: 800px) {
+      @keyframes zoomIn {
+        0% {
+          transform: scale(1) translate(-50%, -50%);
+          background-image: url(${headerImg});
+          background-position: 70% 20%;
+        }
+        50% {
+          transform: scale(1.1) translate(-50%, -50%);
+          background-image: url(${headerImg});
+          background-position: 70% 20%;
+        }
+        55% {
+          transform: scale(1.1) translate(-50%, -50%);
+          background-image: url(${headerImg2});
+          background-position: 40% 20%;
+        }
+        100% {
+          transform: scale(1) translate(-50%, -50%);
+          background-image: url(${headerImg2});
+          background-position: 40% 20%;
+        }
+      }
+    }
   }
   .header-info {
     position: absolute;
@@ -110,6 +134,11 @@ const Wrapper = styled.div`
     line-height: 3;
     text-align: center;
     letter-spacing: 2px;
+    @media screen and (max-width: 800px) {
+      letter-spacing: 1px;
+      line-height: 2;
+      top: 40%;
+    }
     article {
       display: flex;
       flex-direction: column;
@@ -117,9 +146,8 @@ const Wrapper = styled.div`
       align-items: center;
       width: 100%;
       font-family: "Oswald", sans-serif;
-
+      width: 70%;
       h1 {
-        width: 70%;
         text-shadow: 2px 2px 2px black;
         font-size: 2.5rem;
         line-height: 1.5;
@@ -131,14 +159,17 @@ const Wrapper = styled.div`
         color: var(--secondaryColor);
         font-weight: 500;
       }
-    }
-    @media screen and (max-width: 800px) {
-      font-size: 1rem;
-      line-height: 2;
-      letter-spacing: 1px;
-      h1 {
-        width: 85%;
-        text-shadow: 2px 2px 2px black;
+      @media screen and (max-width: 800px) {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        width: 90%;
+        h1 {
+          font-size: 1.5rem;
+          margin-bottom: 5vh;
+        }
+        p {
+          font-size: 1.3rem;
+        }
       }
     }
   }
@@ -163,6 +194,11 @@ const Wrapper = styled.div`
     :hover {
       letter-spacing: 3px;
     }
+    @media screen and (max-width: 800px) {
+      padding: 5px 15px;
+      top: 65%;
+      font-size: 1.1rem;
+    }
   }
   .menAndWoman {
     width: 100vw;
@@ -181,6 +217,12 @@ const Wrapper = styled.div`
       letter-spacing: 6px;
       color: #555;
       text-shadow: 4px 4px 4px black;
+    }
+    @media screen and (max-width: 800px) {
+      top: 80%;
+      h2 {
+        font-size: 1.8rem;
+      }
     }
   }
 `;

@@ -90,7 +90,7 @@ const Wrapper = styled.div`
       text-align: center;
       color: var(--secondaryColor2);
       font-family: var(--menuFont);
-      margin: 0 auto 5vh;
+      margin: 0 auto 3vh;
       font-size: 2rem;
       letter-spacing: 2px;
     }

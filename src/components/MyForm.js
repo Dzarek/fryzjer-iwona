@@ -1,27 +1,19 @@
 import React, { Component } from "react";
 import emailjs from "emailjs-com";
 import styled from "styled-components";
-// import Cookie from "./CookiePage";
-// import CookieConsent from "react-cookie-consent";
+import Cookie from "./CookiePage";
+import CookieConsent from "react-cookie-consent";
 
 import { serviceArticles } from "../data";
 
-const categories = serviceArticles.map((item) => {
-  const { id, title } = item;
-  return (
-    <option key={id} value={title}>
-      {title}
-    </option>
-  );
-});
 let minDate = new Date().toISOString().slice(0, 10);
 
 class MyForm extends Component {
   state = {
     status: "",
     visibleCookie: false,
-    category: "wybierz kategorie",
     date: minDate,
+    phone: "",
   };
   handleChange = (e) => {
     this.setState({
@@ -35,7 +27,9 @@ class MyForm extends Component {
   };
   sendEmail = (e) => {
     e.preventDefault();
-
+    if (e.target.value === "---") {
+      alert("Wybierz kategorię przed wysłaniem formularza.");
+    }
     emailjs
       .sendForm(
         "service_eu28q7p",
@@ -47,6 +41,9 @@ class MyForm extends Component {
         () => {
           e.target.reset();
           this.setState({ status: "SUCCESS" });
+          setTimeout(() => {
+            this.setState({ status: "" });
+          }, 3000);
         },
         () => {
           this.setState({ status: "ERROR" });
@@ -55,12 +52,23 @@ class MyForm extends Component {
   };
 
   render() {
-    const { status } = this.state;
+    const { status, phone } = this.state;
     const handleVisibleCookie = () => {
       this.setState({
         visibleCookie: false,
       });
     };
+    let categories = serviceArticles.map((item) => {
+      const { title } = item;
+      return title;
+    });
+    categories = ["---", ...categories].map((item, index) => {
+      return (
+        <option key={index} value={item}>
+          {item}
+        </option>
+      );
+    });
 
     return (
       <>
@@ -78,23 +86,36 @@ class MyForm extends Component {
             </div>
             <div className="inputs">
               <input type="email" name="email" placeholder="E-mail" required />
-              <input type="text" name="phone" placeholder="Telefon" required />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Telefon"
+                minLength={9}
+                maxLength={12}
+                value={phone}
+                onChange={(e) =>
+                  this.setState({
+                    phone: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
             <br />
             <div className="inputs">
               <div className="chooseInput">
-                {/* <label htmlFor="category">Wybierz kategorie:</label> */}
+                <label htmlFor="category">Wybierz kategorie:</label>
                 <select
                   name="category"
                   id="category"
-                  value={this.state.category}
+                  value={categories[0]}
                   onChange={this.handleChange}
                 >
                   {categories}
                 </select>
               </div>
               <div className="chooseInput">
-                {/* <label htmlFor="category">Wybierz datę:</label> */}
+                <label htmlFor="category">Wybierz termin:</label>
 
                 <input
                   type="date"
@@ -130,17 +151,17 @@ class MyForm extends Component {
               </p>
             </label>
             {status === "SUCCESS" ? (
-              <p>Wiadomość wysłana! </p>
+              <p className="sendMessage">Wiadomość wysłana! </p>
             ) : (
               <button>Wyślij</button>
             )}
             {status === "ERROR" && <p>ups... coś poszło nie tak!</p>}
           </form>
-          {/* {this.state.visibleCookie && (
+          {this.state.visibleCookie && (
             <Cookie handleVisibleCookie={handleVisibleCookie} />
-          )} */}
+          )}
         </Wrapper>
-        {/* <CookieConsent
+        <CookieConsent
           buttonText="Akceptuje"
           cookieName="myAwesomeCookieName2"
           className="cookieInfo"
@@ -154,7 +175,7 @@ class MyForm extends Component {
           buttonStyle={{
             color: "white",
             fontSize: "18px",
-            backgroundColor: "rgb(120, 2, 2)",
+            backgroundColor: "rgb(161, 140, 97)",
             padding: "10px",
             borderRadius: "5px",
           }}
@@ -165,12 +186,12 @@ class MyForm extends Component {
           na tej stronie można się zapoznać tutaj:
           <span
             onClick={() => this.setState({ visibleCookie: true })}
-            className="cookieLink"
+            style={{ color: "rgb(161, 140, 97)", cursor: "pointer" }}
           >
             (Polityka Prywatności)
           </span>
           .
-        </CookieConsent> */}
+        </CookieConsent>
       </>
     );
   }
@@ -212,7 +233,7 @@ const Wrapper = styled.div`
       text-align: center;
       color: var(--secondaryColor2);
       font-family: var(--menuFont);
-      margin: 0 auto 5vh;
+      margin: 0 auto 3vh;
       font-size: 2rem;
       letter-spacing: 2px;
     }
@@ -221,7 +242,7 @@ const Wrapper = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 2vh auto;
+      margin: 1vh auto;
       input {
         width: 46%;
         font-size: 1.2rem;
@@ -285,6 +306,9 @@ const Wrapper = styled.div`
   }
   .cookie {
     width: 100vw;
+  }
+  .sendMessage {
+    font-size: 1.2rem;
   }
 `;
 

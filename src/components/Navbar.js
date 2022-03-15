@@ -4,10 +4,10 @@ import { Link } from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
 
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
-import { IoMdImages } from "react-icons/io";
 
-import { FaHandshake } from "react-icons/fa";
-import { BsFillPersonFill } from "react-icons/bs";
+import { GiHairStrands } from "react-icons/gi";
+import { GiReceiveMoney } from "react-icons/gi";
+import { MdPeople } from "react-icons/md";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
 import { IoHome } from "react-icons/io5";
 
@@ -50,7 +50,6 @@ const Navbar = () => {
               duration={1000}
               activeClass="active"
               spy={true}
-              // offset={-30}
             >
               O nas
             </Link>
@@ -105,18 +104,18 @@ const Navbar = () => {
           <BsFillArrowUpSquareFill />
         </button>
       </Wrapper>
-      {/* <Wrapper2>
+      <Wrapper2>
         <div
           onClick={() => {
             scroll.scrollToTop();
           }}
           className="logo"
         >
-          <h2>
-            Kamil Łach
-            <div className="logoLine"></div>
-            <span>Fotograf</span>{" "}
-          </h2>
+          <h1>
+            Salon Fryzjerski
+            <img className="logoLine" src={logoImg} alt="logo" />
+            <span>Iwona Marzec</span>{" "}
+          </h1>
         </div>
         <div className="navbar navbarBg">
           <Link
@@ -130,28 +129,6 @@ const Navbar = () => {
             <IoHome />
           </Link>
           <Link
-            to="gallery"
-            smooth={true}
-            duration={1000}
-            activeClass="active"
-            spy={true}
-            offset={10}
-            onClick={handleScroll}
-          >
-            <IoMdImages />
-          </Link>
-          <Link
-            to="offer"
-            smooth={true}
-            duration={1000}
-            activeClass="active"
-            spy={true}
-            offset={30}
-            onClick={handleScroll}
-          >
-            <FaHandshake />
-          </Link>
-          <Link
             to="aboutMe"
             smooth={true}
             duration={1000}
@@ -160,7 +137,29 @@ const Navbar = () => {
             offset={30}
             onClick={handleScroll}
           >
-            <BsFillPersonFill />
+            <MdPeople />
+          </Link>
+          <Link
+            to="service"
+            smooth={true}
+            duration={1000}
+            activeClass="active"
+            spy={true}
+            offset={30}
+            onClick={handleScroll}
+          >
+            <GiHairStrands />
+          </Link>
+          <Link
+            to="price"
+            smooth={true}
+            duration={1000}
+            activeClass="active"
+            spy={true}
+            offset={30}
+            onClick={handleScroll}
+          >
+            <GiReceiveMoney />
           </Link>
           <Link
             to="contact"
@@ -174,7 +173,7 @@ const Navbar = () => {
             <MdOutlinePhoneAndroid />
           </Link>
         </div>
-      </Wrapper2> */}
+      </Wrapper2>
     </>
   );
 };
@@ -260,9 +259,6 @@ const Wrapper = styled.div`
             }
           }
         }
-        span {
-          color: var(--secondaryColor);
-        }
       }
     }
   }
@@ -306,57 +302,39 @@ const Wrapper2 = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    background: var(--logoBgMobile);
   }
-  h2 {
-    font-family: "Genos", sans-serif;
+  h1 {
+    width: 100%;
+    font-family: "Karantina", cursive;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    margin-left: 0;
-    /* color: white1; */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px black;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--secondaryColor);
+    text-align: center;
     .logoLine {
-      margin: 5px 30px 0;
-      height: 1.5rem;
-      width: 3px;
-      background: white;
-      background: #999;
-      animation: logoR 4s linear infinite;
-
+      margin: 5px 15px 0;
+      height: 2.3rem;
+      animation: logoR 3s linear infinite alternate;
       @keyframes logoR {
+        0% {
+          transform: rotateY(0deg);
+        }
         20% {
-          transform: rotate(0deg);
-        }
-        30% {
-          transform: rotate(90deg);
-        }
-        40% {
-          transform: rotate(90deg);
-        }
-        50% {
-          transform: rotate(180deg);
+          transform: rotateY(0deg);
         }
         60% {
-          transform: rotate(180deg);
-        }
-        70% {
-          transform: rotate(270deg);
-        }
-        80% {
-          transform: rotate(270deg);
-        }
-        90% {
-          transform: rotate(360deg);
+          transform: rotateY(180deg);
         }
         100% {
-          transform: rotate(360deg);
+          transform: rotateY(180deg);
         }
       }
-    }
-    span {
-      color: var(--secondaryColor);
     }
   }
   .navbar {
@@ -368,30 +346,27 @@ const Wrapper2 = styled.div`
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    justify-content: space-around;
     justify-content: space-evenly;
     align-items: center;
     z-index: 9999;
-
+    background: rgba(0, 0, 0, 0.95);
+    color: #fff;
     h5,
     a {
       font-weight: 600;
       font-size: 1.8rem;
-      font-family: "Genos", sans-serif;
       text-transform: uppercase;
       transition: 0.4s;
       cursor: pointer;
       display: flex;
       align-items: center;
       user-select: none;
-
       &.active {
-        color: var(--secondaryColor);
+        color: var(--secondaryColor2);
       }
     }
   }
   .navbarBg {
-    background: var(--navbarBgColor);
     transition: 0.5s;
   }
 `;

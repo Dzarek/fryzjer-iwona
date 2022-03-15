@@ -44,8 +44,11 @@ const About = () => {
 };
 
 const Wrapper = styled.div`
-  /* padding: 15vh 0vw; */
   margin: 15vh auto;
+  @media screen and (max-width: 800px) {
+    padding: 15vh 0vw;
+    margin: 0 auto;
+  }
 
   .aboutContainer {
     padding-top: 20vh;
@@ -59,6 +62,11 @@ const Wrapper = styled.div`
     position: absolute;
     top: 40vh;
     left: -3vw;
+    @media screen and (max-width: 800px) {
+      top: 10vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
   .pageContent {
     /* width: 70vw; */
@@ -112,6 +120,16 @@ const Wrapper = styled.div`
         font-family: var(--menuFont);
         color: var(--secondaryColor2);
         font-size: 2rem;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      width: 90vw;
+      margin: 15vh auto 5vh;
+      span {
+        width: auto;
+      }
+      h2:nth-of-type(1) {
+        margin-top: -5vh;
       }
     }
   }
