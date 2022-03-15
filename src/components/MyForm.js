@@ -14,6 +14,7 @@ class MyForm extends Component {
     visibleCookie: false,
     date: minDate,
     phone: "",
+    category: "---",
   };
   handleChange = (e) => {
     this.setState({
@@ -52,7 +53,7 @@ class MyForm extends Component {
   };
 
   render() {
-    const { status, phone } = this.state;
+    const { status, phone, category } = this.state;
     const handleVisibleCookie = () => {
       this.setState({
         visibleCookie: false,
@@ -108,7 +109,7 @@ class MyForm extends Component {
                 <select
                   name="category"
                   id="category"
-                  value={categories[0]}
+                  value={category}
                   onChange={this.handleChange}
                 >
                   {categories}
@@ -171,6 +172,7 @@ class MyForm extends Component {
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",
+            zIndex: 999999,
           }}
           buttonStyle={{
             color: "white",
