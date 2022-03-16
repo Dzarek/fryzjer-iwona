@@ -13,7 +13,7 @@ class MyForm extends Component {
     status: "",
     visibleCookie: false,
     date: minDate,
-    phone: "",
+    // phone: "",
     category: "---",
   };
   handleChange = (e) => {
@@ -28,32 +28,37 @@ class MyForm extends Component {
   };
   sendEmail = (e) => {
     e.preventDefault();
-    if (e.target.value === "---") {
-      alert("Wybierz kategorię przed wysłaniem formularza.");
+    if (this.state.category === "---") {
+      return alert("Wybierz kategorię przed wysłaniem formularza.");
+    } else {
+      emailjs
+        .sendForm(
+          "service_eu28q7p",
+          "template_2gciz6b",
+          e.target,
+          "QPhckFRY63F4zWAKT"
+        )
+        .then(
+          () => {
+            e.target.reset();
+            this.setState({
+              category: "---",
+              status: "SUCCESS",
+              date: minDate,
+            });
+            setTimeout(() => {
+              this.setState({ status: "" });
+            }, 3000);
+          },
+          () => {
+            this.setState({ status: "ERROR" });
+          }
+        );
     }
-    emailjs
-      .sendForm(
-        "service_eu28q7p",
-        "template_2gciz6b",
-        e.target,
-        "QPhckFRY63F4zWAKT"
-      )
-      .then(
-        () => {
-          e.target.reset();
-          this.setState({ status: "SUCCESS" });
-          setTimeout(() => {
-            this.setState({ status: "" });
-          }, 3000);
-        },
-        () => {
-          this.setState({ status: "ERROR" });
-        }
-      );
   };
 
   render() {
-    const { status, phone, category } = this.state;
+    const { status, category } = this.state;
     const handleVisibleCookie = () => {
       this.setState({
         visibleCookie: false,
@@ -93,12 +98,12 @@ class MyForm extends Component {
                 placeholder="Telefon"
                 minLength={9}
                 maxLength={12}
-                value={phone}
-                onChange={(e) =>
-                  this.setState({
-                    phone: e.target.value,
-                  })
-                }
+                // value={phone}
+                // onChange={(e) =>
+                //   this.setState({
+                //     phone: e.target.value,
+                //   })
+                // }
                 required
               />
             </div>
