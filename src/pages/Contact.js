@@ -20,7 +20,7 @@ const Contact = () => {
             <h3>zadzwoń</h3>
             <section>
               <MdPhoneAndroid />
-              <h5>789 194 123</h5>
+              <h5>987 654 321</h5>
             </section>
 
             <section>
@@ -30,7 +30,7 @@ const Contact = () => {
           </div>
         </section>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.11513191577!2d19.936765435911067!3d50.08413125657414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a561c37111d%3A0x31dd5c09ed25e7f6!2sSalon%20Fryzjerski%20-%20Iwona%20Marzec!5e0!3m2!1spl!2spl!4v1647181955420!5m2!1spl!2spl"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1809.8212921416794!2d19.931846846318425!3d50.096137707390504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a5cc857873f%3A0xcc1ef335c6477b10!2sStudio%20Fryzur!5e0!3m2!1spl!2spl!4v1651415257474!5m2!1spl!2spl"
           allowfullscreen=""
           loading="lazy"
           className="mapContact"

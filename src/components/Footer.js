@@ -5,12 +5,12 @@ const Footer = () => {
   return (
     <Wrapper>
       <p className="desktopFooter">
-        &copy; 2010 - {new Date().getFullYear()} Salon Fryzjerski - Iwona
-        Marzec. Wszelkie prawa zastrzeżone.
+        &copy; 2010 - {new Date().getFullYear()} Studio Fryzur. Wszelkie prawa
+        zastrzeżone.
       </p>
       <p className="mobileFooter">
-        &copy; 2010 - {new Date().getFullYear()} <br /> Salon Fryzjerski - Iwona
-        Marzec. Wszelkie prawa zastrzeżone.
+        &copy; 2010 - {new Date().getFullYear()} <br /> Studio Fryzur. Wszelkie
+        prawa zastrzeżone.
       </p>
     </Wrapper>
   );
