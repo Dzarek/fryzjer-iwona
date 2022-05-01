@@ -113,9 +113,9 @@ const Navbar = () => {
           className="logo"
         >
           <h1>
-            Salon Fryzjerski
+            Studio
             <img className="logoLine" src={logoImg} alt="logo" />
-            <span>Iwona Marzec</span>{" "}
+            <span>Fryzur</span>{" "}
           </h1>
         </div>
         <div className="navbar navbarBg">
