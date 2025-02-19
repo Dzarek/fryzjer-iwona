@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -18,7 +18,7 @@ html {
   --secondaryColor: #d3bb8c;
   --secondaryColor2: #a18c61;
   --menuFont: "Oswald", sans-serif;
-  --textFont: 'Signika Negative', sans-serif;
+  --textFont: "Signika Negative", sans-serif;
 }
 
 body {
@@ -50,5 +50,41 @@ body {
     font-size: 3rem;
     letter-spacing: 1px;
     z-index: 99;
+  }
+}
+
+.logoJarek {
+  position: absolute;
+  bottom: 10%;
+  left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+.logoJarek a {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+.logoJarek a img {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  opacity: 0.8;
+}
+.logoJarek a img :hover {
+  filter: invert(100%);
+}
+
+.logoJarek p {
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  color: white;
+}
+@media screen and (max-width: 800px) {
+  .logoJarek {
+    bottom: 2%;
+    left: 3%;
   }
 }
