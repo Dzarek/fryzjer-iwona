@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const logoJarek = "/public/logoJarek.png";
+import logoJarek from "../images/logoJarek.png";
 
 const Footer = () => {
   return (
@@ -35,6 +35,7 @@ const Wrapper = styled.div`
   font-size: 1.3rem;
   color: #fff;
   text-align: center;
+  position: relative;
   .mobileFooter {
     display: none;
   }
