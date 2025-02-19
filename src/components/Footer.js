@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+const logoJarek = "/public/logoJarek.png";
+
 const Footer = () => {
   return (
     <Wrapper>
@@ -12,6 +14,12 @@ const Footer = () => {
         &copy; 2010 - {new Date().getFullYear()} <br /> Studio Fryzur. Wszelkie
         prawa zastrzeżone.
       </p>
+      <span className="logoJarek">
+        <p>projekt i wykonanie</p>
+        <a href="https://www.jarekjanas.com">
+          <img src={logoJarek} alt="logo Jarosław Janas" />
+        </a>{" "}
+      </span>
     </Wrapper>
   );
 };
