@@ -30,7 +30,7 @@ const Contact = () => {
           </div>
         </section>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1809.8212921416794!2d19.931846846318425!3d50.096137707390504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a5cc857873f%3A0xcc1ef335c6477b10!2sStudio%20Fryzur!5e0!3m2!1spl!2spl!4v1651415257474!5m2!1spl!2spl"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163974.24345887027!2d19.83998273934049!3d50.04700380437421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471644c0354e18d1%3A0xb46bb6b576478abf!2zS3Jha8Ozdw!5e0!3m2!1spl!2spl!4v1739989058489!5m2!1spl!2spl"
           allowfullscreen=""
           loading="lazy"
           className="mapContact"
